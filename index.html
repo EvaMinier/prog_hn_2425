@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Programmation pour les Humanités Numériques.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
 		<link rel="stylesheet" href="assets/css/styles.css">
 	</head>
 	<body>
@@ -34,6 +36,7 @@
         </tbody>
     </table>
 			<div id="aboutme">
+				<h3>A propos de moi</h3
 				<p><u>Voici les cinq derniers livres que j'ai lu :</u></p><ol>
 					<li><i>La couleur des émotions</i>, Anna Llenas, Nathan, lecture pour ma nièce
 					<li><i>Le très grand livre des animaux</i>, Editions Usborne, Usborne, lecture aussi pour nièce
@@ -41,8 +44,62 @@
 					<li><i>Le bonheur des ogres</i>, Danniel Pennac, Fayar, une lecture moderne du roman <i>Au bonheur des dames</i>
 					<li><i>Nous sommes tous des féministes</i>, Chimamanda Ngozi Adichie, Editions des Femmes, livre sur le féminisme moderne
 				</ol>
+			</div><br>
+			
+			<div id="name">
+				<label for="prenom">Comment vous appelez-vous?</label>
+					<input type="text" id="prenom" placeholder="Entrez votre prénom" />
+					<button onclick="afficherBonjour()">Bonjour...</button>
+					
+			<p id="message"></p>
+				<script>
+					function afficherBonjour() {
+						var prenom = document.getElementById("prenom").value;
+						if (prenom) {
+							document.getElementById("message").innerText = "Bonjour, " + prenom + " !";
+						} else {
+							document.getElementById("message").innerText = "Veuillez entrer un prénom.";
+						}
+					}
+				</script>
+			</div><br>
+			
+			<div id="aide" class="section">
+			<button onclick="hidesection()">Cacher l'aide</button>
+				<h3>Aide</h3>
+				<p>Ici, on va afficher l'aide.</p>
+				
+				<script>
+					function hidesection(){
+						var section = document.getElementById("aide");
+						section.style.display = "none";
+					}
+				</script>
+			</div><br>
+			
+			<div id="formattxt" class="sect">
+			<p>Sélectionner un fichier au format .txt :
+			<input type="file" id="fileinput" accept=".txt"
+			<button onclick="chargerfichier(")></button>
+			<pre id="formattxt"></pre></p>
+			
+				<script>
+					function chargerfichier() {
+						var fichier = document.getElementById("fileinput").files[0];
+						if (fichier) {
+							var lecteur = new FileReader();
+							lecteur.onload = function(a) {
+							document.getElementById("formattxt").textContent = a.target.result;
+							};
+							lecteur.readAsText(fichier);
+						}
+						else{
+						alert("Sélectionner un fichier au format .txt :");
+						}
+					}
+				</script>
 			</div>
-	
+			
 	<footer>
 		<p>Aller sur <a href="https://www.sorbonne-nouvelle.fr/">le site de Paris 3</a>.</p>
 	</footer>
