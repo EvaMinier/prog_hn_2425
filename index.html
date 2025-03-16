@@ -4,6 +4,7 @@
 		<title>Programmation pour les Humanités Numériques.</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" >
 		<link rel="stylesheet" href="assets/css/styles.css">
+		<script type="text/javascript" src="assets/js/devoirarray.js"></script>
 	</head>
 	<body>
 		<div id="page">
@@ -51,55 +52,65 @@
 					<input type="text" id="prenom" placeholder="Entrez votre prénom" />
 					<button onclick="afficherBonjour()">Bonjour...</button>
 					
-			<p id="message"></p>
-				<script>
-					function afficherBonjour() {
-						var prenom = document.getElementById("prenom").value;
-						if (prenom) {
-							document.getElementById("message").innerText = "Bonjour, " + prenom + " !";
-						} else {
-							document.getElementById("message").innerText = "Veuillez entrer un prénom.";
-						}
-					}
-				</script>
+			<p id="message"></p>			
 			</div><br>
 			
 			<div id="aide" class="section">
-			<button onclick="hidesection()">Cacher l'aide</button>
-				<h3>Aide</h3>
-				<p>Ici, on va afficher l'aide.</p>
-				
-				<script>
-					function hidesection(){
-						var section = document.getElementById("aide");
-						section.style.display = "none";
-					}
-				</script>
+				<button onclick="hidesection()">Cacher l'aide</button>
+					<h3>Aide</h3>
+					<p>Ici, on va afficher l'aide.</p>
 			</div><br>
 			
 			<div id="formattxt" class="sect">
-			<p>Sélectionner un fichier au format .txt :
-			<input type="file" id="fileinput" accept=".txt"
-			<button onclick="chargerfichier(")></button>
-			<pre id="formattxt"></pre></p>
+				<p>Sélectionner un fichier au format .txt :
+				<input type="file" id="fileinput" accept=".txt"
+				<button onclick="chargerfichier()></button>
+				<pre id="formattxt"></pre></p>
+			</div><br>
 			
-				<script>
-					function chargerfichier() {
-						var fichier = document.getElementById("fileinput").files[0];
-						if (fichier) {
-							var lecteur = new FileReader();
-							lecteur.onload = function(a) {
-							document.getElementById("formattxt").textContent = a.target.result;
-							};
-							lecteur.readAsText(fichier);
-						}
-						else{
-						alert("Sélectionner un fichier au format .txt :");
-						}
-					}
-				</script>
+		
+			<div id="JavascriptBoucle" class="section">
+				<h3>Exercices Javascript</h3>
+				<div id="Exemple1" class="moncode">
+					<p><u>Retirer la dernière lettre et la placer au début</u><p>
+					<button onclick="exercice1()">avec le tableau [5,6,7]</button> 
+					<pre id="exercice1codeResultat" class="mycode"></pre>
+					<p><i>exercice1Résultat :</i></p> 
+					<pre id="exercice1Resultat" class="myoutput"></pre>
+				</div>
+			
+				<div id="Exemple2" class="moncode">
+					<p><u>Segmenter le texte et transformer les mots en majuscule</u></p>
+					<textarea id="texteInput" rows="4" cols="30" placeholder="Entrez du texte ici..."></textarea>
+					<br/>
+					<button onclick="exemple2()">Segmenter et Transformer</button> 
+					<pre id="exercice2codeResultat" class="mycode"></pre>
+					<p><i>exercice2Resultat :</i></p>
+					<pre id="exercice2Resultat" class="myoutput"></pre>	
+				</div>
+					
+				<div id="Exemple3" class="moncode">
+					<p><u>Segmenter le texte et retirer les mots de taille 3 ou moins</u></p>
+					<textarea id="texteInput2" rows="4" cols="30" placeholder="Entrez du texte ici..."></textarea><br>
+					<button onclick="exemple3()">Segmenter et Retirer les Mots</button> 
+					<pre id="exercice3codeResultat" class="mycode"></pre>
+					<br/>
+					<p><i>exercice3Resultat :</i></p>
+					<pre id="exercice3Resultat" class="myoutput"></pre>
+				</div>
+				
+				<div id="Exemple4" class="moncode"> <!-- Je n'arrive pas à faire cet exercice, j'ai juste segmenté-->
+					<p><u>Segmenter le texte et afficher les mots dans un tableau</u></p>
+					<textarea id="texteInput3" rows="4" cols="30" placeholder="Entrez du texte ici..."></textarea>
+					<br/>
+					<button onclick="exemple4()">Segmenter et Afficher les Mots</button> 
+					<pre id="exercice4codeResultat" class="mycode"></pre>
+					<br/>
+					<p><i>exercice4Resultat:</i></p>
+					<div id="exercice4Resultat" class="myoutput"></div>
+				</div>
 			</div>
-			
+		</div>
 	<footer>
 		<p>Aller sur <a href="https://www.sorbonne-nouvelle.fr/">le site de Paris 3</a>.</p>
 	</footer>

@@ -61,6 +61,62 @@ h2 {
     border-radius: 8px;
 }
 
+#JavascriptBoucle {
+	margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f1a7  ; 
+    border-radius: 8px;
+}
+
+.mycode {
+	background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Courier New", monospace;
+	display: block;
+	white-space: pre-wrap;
+}
+
+ .myoutput {
+    background-color: #CCCCCC;
+    color: red;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: block; /* Permet un bon affichage */
+}
+
+#Exemple1 {
+	margin-top: 10px;
+    padding: 10px;
+    background-color: #f6d470  ; 
+    border-radius: 4px;
+}
+	
+#Exemple2 {
+	margin-top: 10px;
+    padding: 10px;
+    background-color: #f6d470  ; 
+    border-radius: 4px;
+}
+
+#Exemple3 {
+	margin-top: 10px;
+    padding: 10px;
+    background-color: #f6d470  ; 
+    border-radius: 4px;
+}
+
+#Exemple4 {
+	margin-top: 10px;
+    padding: 10px;
+    background-color: #f6d470  ; 
+    border-radius: 4px;
+}
+
 
 footer {
     text-align: center;
