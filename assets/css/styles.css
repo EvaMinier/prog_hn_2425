@@ -129,3 +129,294 @@ footer {
 #aide {
 	background-color: #f0f3f4
 }
+
+/* LES MODIFICATIONS LIES AU PROJET FINAL COMMENCENT ICI */
+
+#btnInfos { /*Modifications esthétiques du bouton relatif à l'affiche de mon CV*/
+    display: block; /* Rend le bouton en un block pour pouvoir le centrer */
+    margin: 0 auto; /* Centre le bouton horizontalement */
+	background-color: yellow; /*Change la couleur du fond du bouton */
+}
+
+#dateheure h2 { /*Modification du titre de la partie relative au date et à l'heure*/
+    font-size: 1.4em; /* Réduit la taille du texte */
+    font-style: italic; /* Rend le texte en italique */
+}
+
+#dateheure {
+	justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre les éléments dans le conteneur */
+    text-align: center; /* Centre le texte à l'intérieur des boutons */
+	border: 2px solid #333; /* Cadre de 2px de largeur et couleur gris foncé */
+    padding: 20px; /* Espacement interne autour du contenu */
+    background-color: #f9f9f9;
+    border-radius: 8px; /* Arrondissements des coins du cadre */
+    margin: 20px auto; /* Marge autour du cadre */
+    width: 80%; /* Largeur du cadre */
+}
+
+#dateAffichee {
+    margin-top: 20px; /* Espacement entre les boutons et le texte résultat */
+    font-size: 1.2em; 
+    color: #333; 
+    text-align: center;
+}
+
+#analyseDonnees { /*Fond de l'analyse des données*/
+    background-color: #f4e1d2;  
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+	border: 1px solid black; /* Même contour que dans dateheure mais plus petit*/
+}
+
+#analyseDonnees h2 { /*Personalisation du style du titre pour l'analyse des données*/
+	font-family: 'Arial', sans-serif;
+    font-size: 2em; 
+    font-weight: bold; /* Texte en gras */
+    text-align: center; 
+    color: #4B0082; 
+    text-transform: uppercase; /* Titre en majuscule */
+    letter-spacing: 2px; /* Espacement entre les lettres */
+    padding: 20px 0; 
+    background-color: #f3f4f6; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#btnModeEmploi { /*Style Bouton mode d'emploi*/
+    background-color: #B19CD9; 
+    color: white; 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 5px;
+    font-size: 1em; 
+    margin: 20px auto; 
+    display: block; 
+    text-align: center;
+}
+
+#btnModeEmploi:hover { /*Effet visuel lorsque la souris passe sur le bouton*/
+    background-color: #9B7CC3; /* Ici, changement de la couleur au moment du survol */
+}
+
+#modeEmploi {/*Style pour la section Mode d'Emploi*/
+	background-color: #EEE6FF; 
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+#modeEmploi p { /*Style du titre : "Voici un mode d’emploi :"*/
+    font-family: 'Arial', sans-serif; 
+    font-size: 1.2em; 
+    color: #2A2868; 
+    text-align: left; 
+    margin-bottom: 10px; 
+}
+
+/* Style pour la liste des étapes et des explications des boutons */
+ul {
+    list-style-type: none; /* Supprime les puces par défaut */
+    padding-left: 0; /* Retire les marges par défaut */
+}
+
+li {
+    font-family: 'Arial', sans-serif; 
+    font-size: 1.1em; 
+    color: #555;
+    margin: 10px 0; 
+    line-height: 1.3; /* Espacement des lignes pour rendre le texte aéré */
+}
+
+li strong { /* Mettre en gras et en violet les titres */
+    font-weight: bold;
+    color: #4B0082;
+}
+
+#tableaueremplir { 
+    max-width: 650px; /* Limite la largeur maximale de la section */
+    margin: 20px auto;  
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: left;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+#tableaueremplir small {
+    display: block;
+    margin-bottom: 12px;  
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+#tableaueremplir .mylabel {
+    font-weight: bold;
+    margin-right: 6px;
+    color: #4B0082; 
+}
+
+/* Alignement des champs de texte */
+#tableaueremplir input[type="text"] {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    width: 100%;  
+    max-width: 100%;  /* Pas de dépassement */
+    box-sizing: border-box;  
+    margin-bottom: 12px;
+}
+
+.lesboutons { /* Container pour centrer les boutons */
+    text-align: center; 
+    margin-top: 20px;
+}
+
+.lesboutons button { /* Espacement entre les boutons */
+    margin: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95em;
+    cursor: pointer;
+}
+
+.lesboutons button.special { /* Bouton "Bonjour" seul être modifié puisque c'est le seul à être class=special */
+    background-color: #D1838F;
+    color: black;
+    position: relative; /* Nécessaire pour positionner les bordures qui vont être animées */
+    padding: 0.9em 0.9em;
+    border: none;
+    cursor: pointer; /* Change le curseur en main */
+    outline: none;
+    font-size: 12px;
+    margin: 2em 0.4em;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.lesboutons button.special::after,
+.lesboutons button.special::before {
+    content: ''; /* Nécessaire pour créer la bordure visible */
+    position: absolute;
+    display: block;
+    width: 60%;
+    height: 40%;
+    border: 6px solid; /*Modification pour que la bordure soit plus importante*/
+    transition: all 0.5s ease; /*Relatif à l'animation*/
+    border-radius: 5px;
+}
+
+.lesboutons button.special::after {
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent; /* Rend la bordure du haut invisible */
+    border-left-color: transparent; /* Rend la bordure de gauche invisible */
+    border-bottom-color: #A63E3E; /*Modification des couleurs */
+    border-right-color: #A63E3E;
+}
+
+.lesboutons button.special::before {
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #804192;
+    border-left-color: #804192;
+}
+
+.lesboutons button.special:hover::after,
+.lesboutons button.special:hover::before {
+    width: 100%; /* Lors du survol, étendre la largeur de la bordure à 100% */
+    height: 100%; /*Pareil pour la hauteur */
+}
+
+/* Style pour (la plupart) des autres boutons (fade) */
+.lesboutons button.fade {
+    background-color: #e0e0e0;
+}
+
+.lesboutons button.fade:hover {
+    background-color: #ccc;
+}
+
+/* Style du bouton PieChart avec l'effet de dégradé animé */
+.lesboutons button.rainbow {
+    display: block; 
+    margin: 20px auto; 
+    width: 150px; 
+    height: 45px; 
+    color: #fff; 
+    font-size: 12px; 
+    text-decoration: none; /* Supprime toute décoration de texte (par exemple le faite d'être souligné) */
+    font-family: "Lucida Console", "Courier New", monospace; 
+    box-sizing: border-box; 
+    background: linear-gradient(90deg, #03a9f4, #f441a4, #ffeb3b, #03a9f4); /* Dégradé de couleurs */
+    background-size: 400%; 
+    border-radius: 30px; 
+    z-index: 1; /* Assure que le bouton est au-dessus du texte et des résultats */
+    cursor: pointer; 
+    padding: 0 10px;
+    text-align: center; 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    margin-top: 10px; 
+}
+
+/* Effet d'animation lors du survol de PieChart */
+.lesboutons button.rainbow:hover {
+    animation: animate 8s linear infinite; /* Lance l'animation de fond quand le bouton est survolé */
+}
+
+/* Définition de l'animation pour déplacer le dégradé */
+@keyframes animate {
+    0% {
+        background-position: 0%; /* Position initiale du dégradé */
+    }
+    100% {
+        background-position: 400%; /* Position finale du dégradé après l'animation */
+    }
+}
+
+
+
+/*Style de l'affichage du texte et des résultats (après clique sur les boutons)*/
+#Global {
+	margin-right: auto;
+	margin-left: auto;
+	width: 80%;
+	border: 3px;
+	display:table;
+}
+#Global #fileDisplayArea {
+	float:left;
+	width:48%;
+	font-size:0.85em; 
+	height:200px;
+	overflow:scroll;
+}
+
+
+#Global #page-analysis {
+	margin-left:52%;
+	background: #E2EAF4;
+	height:200px;
+	overflow:scroll;
+}
+
+#chartContainer {
+	padding-top: 5%;
+}
+
+#logger3{
+	color:red;
+}
+

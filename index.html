@@ -4,7 +4,9 @@
 		<title>Programmation pour les Humanités Numériques.</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" >
 		<link rel="stylesheet" href="assets/css/styles.css">
-		<script type="text/javascript" src="assets/js/devoirarray.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
+		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> <!-- Inclusion de la bibliothèque CanvasJS pour permettre l'affichage du Pie Chart) (je n'arrivais pas à l'herberger localement) -->
+</head>
 	</head>
 	<body>
 		<div id="page">
@@ -14,6 +16,9 @@
 				<img src="assets/img/Logo.png" alt="Logo Paris 3" width="200" height="auto"/>
 				<img src="assets/img/Photo.png" alt="Photo de présentation" width="200" height="auto"/>
 			</div>
+		<button onclick="Infoscv()" id="btnInfos">Masquer les informations</button> <!-- Bouton pour masquer ou afficher la première partie de mon cv (entre le tableau de mes années universitaires et la partie d'Analyse des données dans un fichier (projet final)  -->
+<br>
+			<div id="infosSupplementaires"> <!-- Partie qui va être afficher ou masquer -->
 			<table>
         <thead>
             <tr>
@@ -37,7 +42,7 @@
         </tbody>
     </table>
 			<div id="aboutme">
-				<h3>A propos de moi</h3
+				<h3>A propos de moi</h3>
 				<p><u>Voici les cinq derniers livres que j'ai lu :</u></p><ol>
 					<li><i>La couleur des émotions</i>, Anna Llenas, Nathan, lecture pour ma nièce
 					<li><i>Le très grand livre des animaux</i>, Editions Usborne, Usborne, lecture aussi pour nièce
@@ -99,7 +104,7 @@
 					<pre id="exercice3Resultat" class="myoutput"></pre>
 				</div>
 				
-				<div id="Exemple4" class="moncode"> <!-- Je n'arrive pas à faire cet exercice, j'ai juste segmenté-->
+				<div id="Exemple4" class="moncode"> 
 					<p><u>Segmenter le texte et afficher les mots dans un tableau</u></p>
 					<textarea id="texteInput3" rows="4" cols="30" placeholder="Entrez du texte ici..."></textarea>
 					<br/>
@@ -111,6 +116,101 @@
 				</div>
 			</div>
 		</div>
+	</div> 
+	<br/> 
+						<!-- DEBUT DU PROJET FINAL -->
+	<div id="dateheure"> <!-- Cette partie concerne la date et l'heure et son option de les afficher en majuscule -->
+		<h2>Envie de connaître la date et l'heure ?</h2> <!-- J'ai donné un titre à cette partie -->
+		<br>
+		<button onclick="afficherDateHeure()">Afficher la date et l'heure</button>
+		<button onclick="afficherMajuscule()">Afficher en majuscule</button>
+			<p id="dateAffichee"></p>
+	</div>
+		<div id="analyseDonnees" class="section"> <!-- Cette section est dédiée à l'analyse des données textuelles -->
+    <h2>Analyse des données dans un fichier</h2>
+ <div>
+    <button onclick="InfoModeEmploi()" id="btnModeEmploi">Afficher le mode d’emploi</button> <!-- Cette partie est relative aux consignes d'utilisation, j'ai apporté quelques modifications notamment sur l'apparence du texte(première partie sont en gras) et j'ai rajouté une consigne pour ma fonction que j'ai créé -->
+    <div id="modeEmploi" style="display: none; margin-top: 10px;">
+        <p><strong>Voici un mode d’emploi :</strong></p>
+        <ul>
+            <li><strong>Etape 1 :</strong> Chargez un texte au format .txt à l’aide du bouton Parcourir.</li>
+            <li><strong>Etape 2 :</strong> Précisez les délimitateurs de votre choix puis cliquez sur le bouton Segmentation.</li>
+            <li><strong>Le bouton Dictionnaire :</strong> Permet d’obtenir un tableau qui classe les tokens de façon décroissante en fonction du nombre d’occurences.</li>
+            <li><strong>Le bouton GREP :</strong> Entrez un pôle (une regex ou un mot) puis cliquez sur GREP pour obtenir le tableau des lignes d’occurrences.</li>
+            <li><strong>Le bouton Concordancier :</strong> Entrez un pôle (une regex ou un mot) et une longueur de contexte puis cliquez sur Concordancier pour obtenir un tableau avec le contexte gauche et droit du pôle recherché.</li>
+            <li><strong>Le bouton Nombre de phrases :</strong> Cliquez et il affichera le nombre de phrases.</li>
+            <li><strong>Le bouton Mots les plus longs :</strong> Cliquez et il affichera les 10 mots les plus longs du texte.</li>
+            <li><strong>Le bouton Pie Chart :</strong> Saisissez des stopwords et cliquez sur le bouton pour afficher un graphique des 30 mots les plus fréquents hors stopwords.</li>
+            <li><strong>Le bouton /kujuj/ :</strong> Ajoute à la fin de chaque mot "uj".</li>
+			<li><strong>Le bouton Première lettre en majuscule:</strong> Permet de mettre la première lettre de chaque mots en majuscule.</li> <!-- Ajout d'une nouvelle consigne pour ma fonction -->
+		<br>
+			 <div>
+                    <span> <!-- Endroit ou l'utilisateur pourra charger un fichier texte présent sur son ordi -->
+                        <label for="fileInput" class="btn"><small>Sélectionner un fichier au format .txt :</small></label>
+                        <input id="fileInput" type="file" accept="text/plain" name="Fichier (.txt)" />
+                    </span>
+                </div>
+                <br />
+        </ul>
+    </div>
+	<p style="text-align:center;"> <!-- Permet de centrer le contenu de la section -->
+	<div id="tableaueremplir"> <!-- Ce bloc regroupe les champs de saisie; j'ai créé cet ID spécifique pour que je puisse agir sur cette section sans affecter les boutons -->
+                    <small>
+                        <label for="delimID" class="mylabel">Délimiteur(s)</label>
+                        &nbsp; <!-- C'est la séparation (l'espace) visuelle entre le label et le champ (formulaire)  -->
+                        <input type="text" value=" ,;’'~|&#@=`%*$()[]{}_:+«»§\/" name="delim" id="delimID" size="40" />
+                    </small>
+                    <br />
+                    <small>
+                        <label for="poleID" class="mylabel">Pôle</label>
+                        &nbsp;
+                        <input type="text" placeholder="entrez un pôle..." name="pole" id="poleID" size="20" />
+                    </small>
+                    &nbsp;
+                    <small>
+                        <label for="lgID" class="mylabel">Longueur</label>
+                        &nbsp;
+                        <input type="text" value="10" name="lg" id="lgID" size="10" />
+                    </small>
+                    <br/>
+                    <small>
+                        <label for="stopwordID" class="mylabel">mots grammaticaux, Stopwords en français </label> <!-- Modification de cette phrase les mots sont en francais et non en anglais et j'ai retiré aussi le ) -->
+                        &nbsp;
+                        <input type="text" value="de,le,la,les,à,et,des,un,une,du,que,en,l,que,qu,d,s,se,ne,n,ce,me,sa" name="stopwords" id="stopwordID" size="60" />
+                    </small>
+					</div>
+                    <br />
+                    <br />
+					<div class="lesboutons"> <!-- Ici aussi j'ai ajouté un nom pour agir uniquement sur cette section (je trouve ca plus facile) -->
+                    <button class="special" onclick="alert('Voici un site qui permet d\'analyser des textes.');"><span>Bonjour</span></button> <!-- Le commentaire apparait au moment de cliquer sur le bouton Bonjour. Il est de class special ce qui permet si il y a une modification des boutons d'autres classes (par exemple : fade) que ce dernier ne soit pas touché par ces modifications -->
+                    <br />
+                    <br />
+                    <button class="fade" onclick="segmenterTexte()"><span>Segmentation</span></button>
+                    <button class="fade" id="btnDict" onclick="dictionnaire()"><span>Dictionnaire</span></button>
+                    <button class="fade" id="btnGrep" onclick="grep()"><span>GREP</span></button>
+                    <button class="fade" onclick="concord()"><span>Concordancier</span></button> <!-- Ajout du mot Concordancier pour qu'il apparaite sur le bouton -->
+                    <button class="fade" onclick="kujuj()"><span>/kujuj/</span></button>
+                    <button class="fade" onclick="nbPhrases()"><span>Nombre de phrases</span></button>
+                    <button class="fade" onclick="tokenLong()">Mots les plus longs</button>
+					<button class="fade" onclick="MotMajuscule()"><span>Première lettre en majuscule</span></button> <!-- Ajout d'un nouveau bouton pour ma fonction qui transforme la première lettre de chaque mot en majuscule -->
+					<button class="rainbow" onclick="pieChart()"><span>Pie Chart</span></button> <!-- Modification du nom du bouton de grapheCamembert-Pie Chart en Pie Chart pour qu'il corresponde à la consigne + changement du bouton fad en rainbow pour qu'il est son propre style quand je ferai le css -->
+					</div>
+                </p>
+            </div>
+            <center>
+            <div id="logger1" style="width:100%"></div>
+            <div id="logger2" style="width:100%"></div>
+            <div id="logger3" style="width:100%"></div>
+            </center>
+            <br/>
+            <div id="Global"> 
+                <div id="fileDisplayArea"></div>
+                <div id="page-analysis"><b></b> <br> </div>
+                <div id="piechartContainer" style="height: 300px; width: 100%;"></div>
+
+            </div>
+        </div>
+</div>
 	<footer>
 		<p>Aller sur <a href="https://www.sorbonne-nouvelle.fr/">le site de Paris 3</a>.</p>
 	</footer>
