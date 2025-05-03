@@ -399,7 +399,7 @@ li strong { /* Mettre en gras et en violet les titres */
 #Global #fileDisplayArea {
 	float:left;
 	width:48%;
-	background: #E2EAF4;
+	background: #E8E8E8;
 	font-size:0.85em; 
 	height:200px;
 	overflow:scroll;
